@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+* Tabler - Premium and Open Source dashboard template with responsive and high quality UI.
+* @version 1.0.0-beta19
+* @link https://tabler.io
+* Copyright 2018-2023 The Tabler Authors
+* Copyright 2018-2023 codecalm.net Paweł Kuna
+* Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
+-->
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Inicio de sesión</title>
+		<!-- CSS files -->
+		<link href="./dist/css/tabler.min.css?1684106062" rel="stylesheet" />
+		<link href="./dist/css/tabler-flags.min.css?1684106062" rel="stylesheet" />
+		<link href="./dist/css/tabler-payments.min.css?1684106062" rel="stylesheet" />
+		<link href="./dist/css/tabler-vendors.min.css?1684106062" rel="stylesheet" />
+		<link href="./dist/css/demo.min.css?1684106062" rel="stylesheet" />
+		<style>
+			@import url("https://rsms.me/inter/inter.css");
+			:root {
+				--tblr-font-sans-serif: "Inter Var", -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+			}
+			body {
+				font-feature-settings: "cv03", "cv04", "cv11";
+			}
+		</style>
+	</head>
+	<body class="d-flex flex-column">
+		<script src="./dist/js/demo-theme.min.js?1684106062"></script>
+		<div class="page page-center">
+			<div class="container container-tight py-4">
+				<div class="text-center mb-4">
+					<a href="." class="navbar-brand navbar-brand-autodark"><img src="./static/logo.svg" height="36" alt="" /></a>
+				</div>
+				<div class="card card-md">
+					<div class="card-body">
+						<h2 class="h2 text-center mb-4">Inicio de sesión a Corpulmundo </h2>
+						<form action="./" id="loginForm" method="get" autocomplete="off" novalidate>
+							<div class="mb-3">
+								<label class="form-label">Usuario</label>
+								<input type="text" class="form-control" id="username" name="username" placeholder="Tu nombre de usuario" autocomplete="off" />
+							</div>
+							<div class="mb-2">
+								<label class="form-label"> Contraseña </label>
+									<input type="password" class="form-control" id="password" name="password" placeholder="Tu contraseña" autocomplete="off" />
+							</div>
+							<div class="mb-2">
+								<label class="form-check">
+									<input type="checkbox" id="remember" name="remember" class="form-check-input" />
+									<span class="form-check-label">Recuérdame en este dispositivo</span>
+								</label>
+							</div>
+							<div class="form-footer">
+								<button type="submit" class="btn btn-primary w-100">Acceder</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="text-center text-muted mt-3">¿Deseas tener acceso? <a href="./sign-up.html" tabindex="-1">Regístrate</a></div>
+			</div>
+		</div>
+		<!-- SUCCESS MODAL -->
+		<div class="modal modal-blur fade" id="modal-good" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					<div class="modal-status bg-success"></div>
+					<div class="modal-body text-center py-4">
+						<!-- Download SVG icon from http://tabler-icons.io/i/circle-check -->
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-green icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+							<circle cx="12" cy="12" r="9" />
+							<path d="M9 12l2 2l4 -4" />
+						</svg>
+						<h3 id="title-good"></h3>
+						<div class="text-muted" id="msg-good"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- SUCCESS MODAL -->
+		<!-- ERROR MODAL -->
+		<div class="modal modal-blur fade" id="modal-error" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					<div class="modal-status bg-danger"></div>
+					<div class="modal-body text-center py-4">
+						<!-- Download SVG icon from http://tabler-icons.io/i/alert-triangle -->
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-danger icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+							<path d="M12 9v2m0 4v.01" />
+							<path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
+						</svg>
+						<h3 id="title-error"></h3>
+						<div class="text-muted" id="msg-error"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ERROR MODAL -->
+		<!-- Libs JS -->
+		<script src="./dist/libs/jquery/jquery-3.7.0.min.js"></script>
+		<script src="./dist/libs/jquery-validation/jquery.validate.min.js"></script>
+		<!-- Tabler Core -->
+		<script src="./dist/js/tabler.min.js?1684106062" defer></script>
+		<script src="./dist/js/demo.min.js?1684106062" defer></script>
+		<!-- Custom JS -->
+		<script src="./src/login.js" defer></script>
+	</body>
+</html>
